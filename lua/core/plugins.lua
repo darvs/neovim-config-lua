@@ -14,6 +14,9 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'ellisonleao/gruvbox.nvim'
+  use { "catppuccin/nvim", as = "catppuccin"}
+  use 'shaunsingh/nord.nvim'
+  use 'AhmedAbdulrahman/vim-aylin'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -21,6 +24,7 @@ return require('packer').startup(function(use)
   use 'bluz71/vim-nightfly-colors'
   use 'vim-test/vim-test'
   use 'lewis6991/gitsigns.nvim'
+  use 'terrortylor/nvim-comment'
 
   use {
     "williamboman/mason.nvim",
@@ -32,6 +36,15 @@ return require('packer').startup(function(use)
 	  tag = '0.1.0',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  use {
+        'stevearc/overseer.nvim',
+        -- config = function()
+        --   require('overseer').setup({
+        --     templates = { "builtin", "user.ruby_build" },
+        --   })
+        --end 
+      }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
